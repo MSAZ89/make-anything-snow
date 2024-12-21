@@ -20,38 +20,42 @@ npm install make-anything-snow
 
 ## Usage
 
-```bash
-import SnowEffect from 'make-anything-snow';
+```html
+<script>
+  import SnowEffect from "make-anything-snow";
 
-const snowEffect = new SnowEffect({
-  targetSelector: '.snow-container', // CSS selector for the container to apply the effect
-  minSize: 5, // Minimum snowflake size in pixels
-  maxSize: 20, // Maximum snowflake size in pixels
-  speed: 5, // Snowflake fall speed (higher value = faster fall)
-  maxFlakes: 200, // Maximum number of snowflakes to create
-  density: 50, // Snowflake density (affects the number of flakes based on container size)
-  wind: 2, // Wind strength affecting horizontal movement
-  rotation: true, // Whether snowflakes should rotate as they fall
-  rotationSpeed: 2, // Speed at which snowflakes rotate
-  opacity: 0.8, // Opacity of the snowflakes,
-  imageUrl: 'snowflake.png', // Image to use for snowflakes (can be a URL or base64 data)
-});
+  const snowEffect = new SnowEffect({
+    targetSelector: ".snow-container", // CSS selector for the container to apply the effect
+    minSize: 5, // Minimum snowflake size in pixels
+    maxSize: 20, // Maximum snowflake size in pixels
+    speed: 5, // Snowflake fall speed (higher value = faster fall)
+    maxFlakes: 200, // Maximum number of snowflakes to create
+    density: 50, // Snowflake density (affects the number of flakes based on container size)
+    wind: 2, // Wind strength affecting horizontal movement
+    rotation: true, // Whether snowflakes should rotate as they fall
+    rotationSpeed: 2, // Speed at which snowflakes rotate
+    opacity: 0.8, // Opacity of the snowflakes,
+    imageUrl: "snowflake.png", // Image to use for snowflakes (can be a URL or base64 data)
+  });
 
-snowEffect.init(); // Initialize and start the snow effect
+  snowEffect.init(); // Initialize and start the snow effect
+</script>
 
 <div class="snow-container">
   <h1>Welcome to my project</h1>
   <p>Enjoy the snow effect on this page!</p>
 </div>
 
-.snow-container {
-  position: relative;
-  width: 100%;
-  height: 100vh;
-  overflow: hidden;
-  pointer-events: none; /* Ensures snow doesn't block interactions */
-  background: transparent; /* Set your desired background */
-}
+<style>
+  .snow-container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    pointer-events: none; /* Ensures snow doesn't block interactions */
+    background: transparent; /* Set your desired background */
+  }
+</style>
 ```
 
 ### Configuration Options
