@@ -22,6 +22,14 @@
   ],
   "author": "msaz89",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MSAZ89/make-anything-snow.git"
+  },
+  "bugs": {
+    "url": "https://github.com/MSAZ89/make-anything-snow/issues"
+  },
+  "homepage": "https://github.com/MSAZ89/make-anything-snow#readme",
   "devDependencies": {
     "@babel/core": "^7.24.0",
     "@babel/preset-env": "^7.24.0",
