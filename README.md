@@ -18,6 +18,10 @@ You can install the package via npm:
 npm install make-anything-snow
 ```
 
+## Config Demo
+
+[https://make-it-snow-config.vercel.app/]
+
 ## Usage
 
 ```html
