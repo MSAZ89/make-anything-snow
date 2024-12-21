@@ -20,6 +20,7 @@ class SnowEffect {
     this.container = null;
     this.containerRect = null;
     this.animationFrame = null;
+    this.resizeTimeout = null; // To debounce resize
   }
 
   init() {
@@ -51,12 +52,18 @@ class SnowEffect {
     // Start animation
     this.animate();
 
-    // Handle window resize
-    window.addEventListener("resize", () => {
+    // Handle window resize with debouncing
+    window.addEventListener("resize", this.debouncedResizeHandler);
+  }
+
+  // Debounced resize handler to prevent multiple reflows
+  debouncedResizeHandler = () => {
+    if (this.resizeTimeout) clearTimeout(this.resizeTimeout);
+    this.resizeTimeout = setTimeout(() => {
       this.updateContainerRect();
       this.adjustFlakesOnResize();
-    });
-  }
+    }, 100);
+  };
 
   updateContainerRect() {
     if (typeof window === "undefined") return;
@@ -192,6 +199,10 @@ class SnowEffect {
       cancelAnimationFrame(this.animationFrame);
     }
 
+    // Remove event listener to prevent memory leaks
+    window.removeEventListener("resize", this.debouncedResizeHandler);
+
+    // Remove all snowflakes
     this.flakes.forEach((flake) => flake.remove());
     this.flakes = [];
   }
