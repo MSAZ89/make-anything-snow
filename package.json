@@ -1,6 +1,6 @@
 {
   "name": "make-anything-snow",
-  "version": "1.0.14",
+  "version": "1.0.15",
   "description": "make any image snow",
   "main": "dist/makeAnythingSnow.js",
   "types": "dist/index.d.ts",
